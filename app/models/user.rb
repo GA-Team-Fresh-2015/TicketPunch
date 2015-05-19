@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   has_many :watch_list_entries
   has_many :movies, through: :watch_list_entries
 
+  validates :username, :uniqueness: true
+
   def to_s
     self.username
   end
