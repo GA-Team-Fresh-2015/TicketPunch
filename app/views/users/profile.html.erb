@@ -1,23 +1,35 @@
-<h1>Welcome <%= @user.username %></h1>
 
-<%= form_tag('/sessions', method: 'delete') do %>
-  <%= submit_tag "Log-Out" %>
-<% end %>
+<div class="page-header">
+  <span id="logout"><%= form_tag('/sessions', method: 'delete') do %>
+    <%= submit_tag "Log-Out" %>
+    <% end %>
+  </span>
+  <div class="row">
+    <span class="col-xs-12 col-sm-6 col-lg-8"><h4 id="tagline">Want to see it? Look it up!</h4>
+      Be sure to search for the exact movie title (e.g. "a," "the")
+  </div>
+
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-lg-8">
+    <input type="text" class="form-control" id='movie_search' placeholder='Enter movie title'>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-lg-8" id='movie-display'></div>
+</div>
+</div>
 
 
-<input id='movie_search' type="text" placeholder='...movie title'>
-<div id='movie-display'></div>
+<table class="col-xs-12 col-sm-6 col-lg-8">
+  <h3> My Watch List </h3>
 
-<button class="btn btn-primary">Sort A-Z</button>
-
-<table>
   <% @user.watch_list_entries.each do |entries| %>
     <tr>
-      <td>
+      <td class="row">
         <%= entries.movie.title %>
       </td>
       <td>
-        <form action="/users/wish/<%= entries.id %>" method="post">
+        <form class="row" action="/users/wish/<%= entries.id %>" method="post">
           <%= token_tag %>
           <input type="hidden" name="_method" value="delete">
           <input type="submit" value="Remove">
@@ -30,25 +42,19 @@
 
 
 <script id='movie-template' type='text/template' charset="utf-8">
-  <h2 class='title'>
-    <%%= title %>
-  </h2>
-  <h4 class='meta-info'>
-    <%%= director %> (<%%= released %>)
+  <h4> Here are your search results! </h4>
+  <h4 class='title'>
+    <%%= title %>  (<%%= released %>)
   </h4>
+  <!-- <h4 class='meta-info'>
+    <%%= director %> (<%%= released %>)
+  </h4> -->
   <p class='plot'>
     <%%= plot %>
   </p>
   <form action="/users/wish" method="post">
     <%= token_tag %>
     <input type="hidden" name="movie_id" value="<%%= id %>">
-
     <input type="submit" value="Add To Watch List">
-
-    <div class="col-md-3"><%%= title %> </div>
-    <div class="col-md-3"><%%= director %> </div>
-    <div class="col-md-3"><%%= released %> </div>
-    <div class="col-md-3"><%%= created_at %> </div>
-
   </form>
 </script>
