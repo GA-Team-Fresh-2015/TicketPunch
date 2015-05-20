@@ -23,7 +23,7 @@
 <table class="col-xs-12 col-sm-6 col-lg-8">
   <h3> My Watch List </h3>
 
-  <% @user.watch_list_entries.each do |entries| %>
+  <% @user.watch_list_entries.order("created_at desc").each do |entries| %>
     <tr>
       <td class="row">
         <%= entries.movie.title %>
