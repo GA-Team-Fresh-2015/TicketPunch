@@ -1,6 +1,4 @@
-## Insert Logo Image here!
 
-![ScreenShot](/screenshot.png)
 # TicketPunch
 - The fun friendly way to organize your movie watch list!
 - Search for a movie and add it to your watch list!
@@ -10,8 +8,6 @@
 TicketPunch is an application which allows a user to organize your movie watch list in a fresh, streamlined way! Sit back and relax as this app leads you through an intuitive user experience.
 
 The homepage draws the user into a clean, elegant homepage which allows the user to log in as a registered user or to sign up as a new user.
-
-![Screenshot](/homepage-fresh.png)
 
 ##Sign Up
 If the user has not made an account, clicking on the new user button below the log in form will bring her or him to the sign up page, where the user will be prompted to submit a username, password and email address. Once this information is submitted, the user will be redirected to the homepage.
@@ -27,8 +23,3 @@ In "My Watch List", the user can remove films.  The films are rendered in the or
 ##Log Out
 When the user wants to log out, the profile page also has a log out button in the top left corner of the page.
 
-
-## Usage Information / Notes for viewer / etc
-
-You can also use animated GIFs for awesome!
-![ScreenShot](/cel.gif)
