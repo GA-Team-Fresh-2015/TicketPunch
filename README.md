@@ -11,6 +11,8 @@ TicketPunch is an application which allows a user to organize your movie watch l
 
 The homepage draws the user into a clean, elegant homepage which allows the user to log in as a registered user or to sign up as a new user.
 
+![Screenshot](/homepage-fresh.png)
+
 ##Sign Up
 If the user has not made an account, clicking on the new user button below the log in form will bring her or him to the sign up page, where the user will be prompted to submit a username, password and email address. Once this information is submitted, the user will be redirected to the homepage.
 
