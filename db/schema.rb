@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20150501191639) do
     t.integer  "movie_id"
     t.integer  "user_id"
     t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "updated_at", null: true
   end
 
   add_index "watch_list_entries", ["movie_id"], name: "index_watch_list_entries_on_movie_id", using: :btree

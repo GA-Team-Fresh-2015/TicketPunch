@@ -12,6 +12,8 @@
  *
  *= require_tree .
  *= require_self
+ *= require bootstrap.min.css
+ *= require flat-ui.min.css
  */
 
 // Brand Defined Colours
@@ -26,3 +28,7 @@ $asset-wenge: #231F20;
 
 // your code
 // not yet implemented
+
+*{
+  font-family: 'leto', sans-serif;
+}

@@ -51,7 +51,6 @@ class UsersController < ApplicationController
     WatchListEntry.destroy(params[:id])
     redirect_to '/profile'
   end
-  
 
   private
 
