@@ -7,16 +7,35 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <%= yield %> 
 
   <% unless current_user %>
     <nav>
-      <a href="/">Home</a>
-      <a href="/users/new">Sign-Up</a>
-      <a href="/users/log-in">Log-In</a>
+      <!-- <a href="/">Home</a> -->
+
+
+<!--       <a href="/users/log-in">Log-In</a>
+ -->      
+      <h3>Sign In</h3>
+          <%= form_tag('/sessions', method:'post') do %>
+          <%= label_tag :username %>
+          <%= text_field_tag :username %>
+
+          <%= label_tag :password %>
+          <%= password_field_tag :password %>
+
+         <%= submit_tag('Log-In')%>
+        <% end %>
+
+       
+       <button class="btn btn-embossed btn-primary">
+          <a href="/users/new">New User</a>
+       </button>
+
+
+
     </nav>
   <% end %>
-
-<%= yield %>
 
 </body>
 </html>
